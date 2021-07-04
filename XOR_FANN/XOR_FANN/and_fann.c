@@ -7,17 +7,20 @@
 //训练+神经网络
 //c = a and b; 布尔变量与运算
 
-/*训练*/
+/*这里是训练异或
+    但是有点问题，不像底下代码收敛
+*/
+/*训练*/        
 void train()
 {
-    const unsigned int NUM_INPUT = 2;
+    const unsigned int NUM_INPUT = 2;               
     const unsigned int NUM_OUTPUT = 1;
-    const unsigned int NUM_LAYERS = 3;
-    const unsigned int NUM_NEURONS_HIDDEN = 2;
-    const float DESIRED_ERROR = (const float)0.0001;
-    const unsigned int MAX_EPOCHS = 1000;
-    const unsigned int EPOCHS_BETWEEN_REPORTS = 10;
-
+    const unsigned int NUM_LAYERS = 3;              //神经网络层数
+    const unsigned int NUM_NEURONS_HIDDEN = 2;       //隐藏层有2个神经元
+    const float DESIRED_ERROR = (const float)0.0001;    //误差要求
+    const unsigned int MAX_EPOCHS = 1000;               //最多执行次数
+    const unsigned int EPOCHS_BETWEEN_REPORTS = 10;        //报给频率
+                    
     struct fann* ann;
     struct fann_train_data* data;
 
@@ -63,6 +66,7 @@ int main()
 }
  
 
+/*以下代码为训练异或的网络，当网络层数达到3，神经元数2时达到要求*/
 
 //#include "../../FANN-2.2.0-Source/src/include/doublefann.h"
 //#pragma comment(lib, "../../FANN-2.2.0-Source/bin/fanndouble.lib")
